@@ -36,18 +36,19 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
 
         // Add text and other content on top of the background image
         doc.setFontSize(12);
-        doc.text(`Item: ${item.name}`, 20, 20); // Replace with your PDF content
-        doc.text(`Programme: ${item.programme}`, 20, 30); // Replace with your PDF content
+        doc.text(`This is to certify that Mr. ${item.name} has been awarded`, 20, 20); // Replace with your PDF content
+                // Check if both position and grade are available before adding them to the PDF
+                if (item.position && item.grade) {
+                  doc.text(`the  ${item.position} with ${item.grade} in`, 20, 40); // Replace with your PDF content
+                } else if (item.position) {
+                  doc.text(`the ${item.position} prize without any grade in`, 20, 40); // Replace with your PDF content
+                } else if (item.grade) {
+                  doc.text(`${item.grade} grade without any position in`, 20, 40); // Replace with your PDF content
+                }
+        doc.text(`${item.programme} in QUL'22 DHIU UG Arts Fest organized by Al Huda Students' Association(ASAs) `, 20, 30); // Replace with your PDF content
+        doc.text(`on October 17 to 23, 2022 at Darul Huda Islamic University  `, 20, 30); // Replace with your PDF content
 
-        // Check if both position and grade are available before adding them to the PDF
-        if (item.position && item.grade) {
-          doc.text(`Position: ${item.position}`, 20, 40); // Replace with your PDF content
-          doc.text(`Grade: ${item.grade}`, 65, 40); // Replace with your PDF content
-        } else if (item.position) {
-          doc.text(`Position: ${item.position}`, 20, 40); // Replace with your PDF content
-        } else if (item.grade) {
-          doc.text(`Grade: ${item.grade}`, 20, 40); // Replace with your PDF content
-        }
+
 
         const pdfBlob = doc.output('blob');
         saveAs(pdfBlob, `${item.programme} - ${item.name}.pdf`);
@@ -108,7 +109,7 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
                     </div>
                     <button
                       onClick={() => handleDownloadPDF(item)}
-                      className="px-4 py-2 bg-green-800 text-white rounded-md ml-auto hover:bg-green-700"
+                      className="px-4 py-2 bg-green-800 text-white rounded-md ml-auto hover:bg-yellow-500 hover:text-black"
                     >
                       Download PDF
                     </button>
