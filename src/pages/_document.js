@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
       <link rel="icon" href="/qul-favicon.png" />
-      <title>Qul Certificate Search Engine - ASAs Media 2022 -'23</title>
+      <title>Qul Certificate Search</title>
       </Head>
       <body>
         <Main />

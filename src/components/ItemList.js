@@ -90,7 +90,7 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
       ).map((item) => (
         <li
           key={item.name}
-          className="cursor-pointer hover:bg-green-700  py-2 px-4 bg-green-800 font-semibold text-white rounded-full m-1"
+          className="cursor-pointer hover:bg-green-900  py-2 px-4 bg-green-800 font-semibold text-white rounded-full m-1"
           onClick={() => handleItemClick(item)}
         >
           <h2>{item.name}</h2>
@@ -100,7 +100,7 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
       {!showAllSuggestions && (
         <li>
           <button
-            className="cursor-pointer hover:bg-red-700 py-2 px-4 bg-yellow-400 font-semibold text-white rounded-full m-1"
+            className="cursor-pointer hover:bg-red-700 hover:text-white py-2 px-4 bg-yellow-500 font-semibold text-black rounded-full m-1"
             onClick={handleShowAllSuggestions}
           >
             Show All Suggestions
@@ -109,14 +109,14 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
       )}
       {selectedItem && (
         <div className="fixed top-0 left-0 w-full h-full bg-gray-100 bg-opacity-75 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-md shadow-md max-w-md w-full border-b-8 border-green-800">
+          <div className="bg-white p-6 rounded-xl shadow-xl max-w-md w-full  border-green-800">
             <h2 className="text-2xl font-bold text-center mb-9">{selectedItem.name}</h2>
             <div className="space-y-2">
               {items
                 .filter((item) => item.name.includes(selectedItem.name))
                 .map((item) => (
                   <div key={item.id} className="flex items-center pt-3">
-                    <div className="w-4 h-4 rounded-full bg-green-800 mr-2" />
+                    <div className="w-4 h-4 rounded-full bg-green-800 text-black mr-2" />
                     <div>
                       <p className="text-gray-800 font-bold">{item.programme}</p>
                       {item.position && item.grade ? (
@@ -141,7 +141,7 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
                     </div>
                     <button
                       onClick={() => handleDownloadPDF(item)}
-                      className="px-4 py-2 bg-green-800 text-white rounded-md ml-auto hover:bg-yellow-500 hover:text-black"
+                      className="px-4 py-2 bg-yellow-500 text-black font-semibold rounded-md ml-auto  hover:bg-yellow-600 hover:text-black"
                     >
                       Download PDF
                     </button>
@@ -153,7 +153,7 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
                <span className="font-semibold text-lg">ASAs Media Wing 2022-'23</span></p>
               <button
                 onClick={handleCloseModal}
-                className="px-4 py-2 bg-yellow-500 font-bold rounded-md hover:bg-yellow-400"
+                className="px-4 py-2 bg-green-800 text-white font-bold rounded-md hover:bg-green-900"
               >
                 Close
               </button>
