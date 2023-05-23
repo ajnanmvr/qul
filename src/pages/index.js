@@ -45,8 +45,8 @@ const style= "background:red"
               </button>
             )}
           </form>
-          <div className="glow glow-1 z-10 bg-orange-900 absolute" />
-          <div className="glow glow-2 z-20 bg-yellow-600 absolute" />
+          <div className="glow glow-1 z-10 bg-yellow-600 absolute" />
+          <div className="glow glow-2 z-20 bg-orange-600 absolute" />
           <div className="glow glow-3 z-30 bg-yellow-400 absolute" />
           <div className="glow glow-4 z-40 bg-green-800 absolute" />
         </div>
