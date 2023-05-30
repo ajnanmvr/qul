@@ -1,6 +1,6 @@
 {
-  "name": "cetificte",
-  "version": "0.1.0",
+  "name": "qul-cetificate",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
