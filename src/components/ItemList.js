@@ -21,53 +21,53 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
   });
   const handleDownloadPDF = (item) => {
     const doc = new jsPDF('landscape', 'mm', 'a4');
-    
+
     // Load Montserrat font
-    doc.addFont('https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf', 'Montserrat', 'normal');
-    
+    doc.addFont('https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wlhzg.ttfhttps://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet','normal');
+
     const backgroundImageUrl = '/certificate.jpg'; // Update the path to your background image
-    
+
     const pdfWidth = doc.internal.pageSize.getWidth();
     const pdfHeight = doc.internal.pageSize.getHeight();
-    
+
     fetch(backgroundImageUrl)
       .then((response) => response.blob())
       .then((blob) => {
         const imgData = URL.createObjectURL(blob);
-  
+
         // Add the background image
         doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
-  
+
         // Set the font to Montserrat
         doc.setFont('Montserrat');
-  
+
         // Add text and other content on top of the background image
         doc.setFontSize(15);
         doc.setTextColor(0, 0, 0); // Set text color to black
-        
+
         const capitalizedName = item.name.toUpperCase();
         const capitalizedGrade = item.grade ? item.grade.toUpperCase() : '';
         const capitalizedPosition = item.position ? item.position.toUpperCase() : '';
         const capitalizedProgramme = item.programme.toUpperCase();
-        
+
         doc.text(`This is to certify that Mr. ${capitalizedName} has been awarded`, pdfWidth / 2, 135, { align: 'center' });
-        
+
         if (item.position && item.grade) {
-          doc.text(`the ${capitalizedPosition} with ${capitalizedGrade} grade in ${capitalizedProgramme} in QUL'22`, pdfWidth / 2, 144, { align: 'center' });
-        } else if (item.position) {
-          doc.text(`the ${capitalizedPosition} prize without any grade in ${capitalizedProgramme} in QUL'22`, pdfWidth / 2, 144, { align: 'center' });
-        } else if (item.grade) {
-          doc.text(`${capitalizedGrade} grade without any position in ${capitalizedProgramme} in QUL'22`, pdfWidth / 2, 144, { align: 'center' });
+          doc.text(`the ${capitalizedPosition} in ${capitalizedProgramme} in MAERIKA 2K24`, pdfWidth / 2, 144, { align: 'center' });
+        } else if  (item.position) {
+          doc.text(`the ${capitalizedPosition} in ${capitalizedProgramme} in MAERIKA 2K24`, pdfWidth / 2, 144, { align: 'center' });
+        } else if (item.grade){
+          doc.text(`the ${capitalizedPosition} in ${capitalizedProgramme} in MAERIKA 2K24`, pdfWidth / 2, 144, { align: 'center' });
         }
-  
-        doc.text(`DHIU UG Arts Fest organized by Al Huda Students' Association (ASAs)`, pdfWidth / 2, 153, { align: 'center' });
-        doc.text(`on October 17 to 23, 2022 at Darul Huda Islamic University`, pdfWidth / 2, 162, { align: 'center' });
-  
+
+        doc.text(`Arts Fest organized by Jawharathul Uloom Suffa Dars Students' Association (JDSA)`, pdfWidth / 2, 153, { align: 'center' });
+        doc.text(`.`, pdfWidth / 2, 162, { align: 'center' });
+
         const pdfBlob = doc.output('blob');
         saveAs(pdfBlob, `${item.programme} - ${item.name}.pdf`);
       });
   };
-  
+
 
 
   const handleItemClick = (item) => {
@@ -150,7 +150,7 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
             </div>
             <div className="flex justify-center mt-4 flex-col">
               <p className="text-zinc-500 text-sm text-center m-5">Designed and Developed by <br/>
-               <span className="font-semibold text-lg">ASAs Media Wing 2022-'23</span></p>
+               <span className="font-semibold text-lg">JDSA Media Wing</span></p>
               <button
                 onClick={handleCloseModal}
                 className="px-4 py-2 bg-green-800 text-white font-bold rounded-md hover:bg-green-900"
