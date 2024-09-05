@@ -1,9 +1,13 @@
- .glow {
+.glow {
   top: -10%;
   left: -10%;
   width: 120%;
   height: 120%;
   border-radius: 100%;
+  position: absolute;
+  /* Blue glow effect */
+  background-color: rgba(0, 0, 255, 0.2); /* Light blue */
+  box-shadow: 0 0 30px 15px rgba(0, 0, 255, 0.6); /* Blue glowing shadow */
 }
 
 .glow-1 {
