@@ -20,17 +20,88 @@
          {
        "name": "BADRIYA",
        "position": "FIRST",
-       "programme": "Pencil Drawing"
+       "programme": "Image composition"
          },
         {
        "name": "QUDSIYA",
        "position": "SECOND",
-       "programme": "Pencil Drawing"
+       "programme": "Image composition"
       },
         {
        "name": "QUDSIYA",
        "position": "THIRD",
-       "programme": "Pencil Drawing"
+       "programme": "Image composition"
+        },
+        
+        {
+       "name": "QUDSIYA",
+       "position": "THIRD",
+       "programme": "Handwritten Malayalam"
+        },
+        
+         {
+       "name": "BADRIYA",
+       "position": "FIRST",
+       "programme": "Handwritten Malayalam"
+         },
+        {
+       "name": "BADRIYA",
+       "position": "SECOND",
+       "programme": "Handwritten Malayalam"
+        },
+
+        
+        {
+       "name": "QUDSIYA",
+       "position": "THIRD",
+       "programme": "Handwritten English"
+        },
+        
+         {
+       "name": "BADRIYA",
+       "position": "FIRST",
+       "programme": "Handwritten English"
+         },
+        {
+       "name": "BADRIYA",
+       "position": "SECOND",
+       "programme": "Handwritten English"
+        },
+
+        
+        {
+       "name": "QUDSIYA",
+       "position": "THIRD",
+       "programme": "Handwritten Arabic"
+        },
+        
+         {
+       "name": "BADRIYA",
+       "position": "FIRST",
+       "programme": "Handwritten Arabic"
+         },
+        {
+       "name": "BADRIYA",
+       "position": "SECOND",
+       "programme": "Handwritten Arabic"
+        },
+
+        
+        {
+       "name": "QUDSIYA",
+       "position": "SECOND",
+       "programme": "Poster Making"
+        },
+        
+         {
+       "name": "BADRIYA",
+       "position": "FIRST",
+       "programme": "Poster Making"
+         },
+        {
+       "name": "BADRIYA",
+       "position": "THIRD",
+       "programme": "Poster Making"
         }
     ]
 }
