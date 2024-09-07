@@ -15,6 +15,22 @@
        "name": "BADRIYA",
        "position": "THIRD",
        "programme": "Memory Test"
-         }
+         },
+        
+         {
+       "name": "BADRIYA",
+       "position": "FIRST",
+       "programme": "Pencil Drawing"
+         },
+        {
+       "name": "QUDSIYA",
+       "position": "SECOND",
+       "programme": "Pencil Drawing"
+      },
+        {
+       "name": "QUDSIYA",
+       "position": "THIRD",
+       "programme": "Pencil Drawing"
+        }
     ]
 }
