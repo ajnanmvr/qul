@@ -2,74 +2,14 @@
     
     "items": [
       {
-       "name": "Muhammed Jibin Ziyand ",
+       "name": "QUDSIYA",
        "position": "",
-       "programme": ""
+       "programme": "NN",
+       "programme": "NN"
       },
         {
-       "name": "Mohammed Jareer",
+       "name": "BADRIYA",
        "position": "",
        "programme": ""
-      },
-        {
-       "name": "Muhammed Shafi",
-       "position": "",
-       "programme": ""
-      },
-        {
-       "name": "Muhammed Rahil",
-       "position": "",
-       "programme": ""
-      },
-        {
-       "name": "Muhammed Sidan",
-       "position": "",
-       "programme": ""
-      },
-        {
-       "name": "Muhammed Irfan",
-       "position": "",
-       "programme": ""
-      },
-        {
-       "name": "Muhammed Afham",
-       "position": "",
-       "programme": ""
-      },
-        {
-       "name": "Muhammed Anshid",
-       "position": "",
-       "programme": ""
-      },
-        {
-       "name": "Muhammed Shimlal",
-       "position": "",
-       "programme": ""
-      },
-        {
-       "name": "Muhammed Shareef",
-       "position": "",
-       "programme": ""
-      },
-        {
-       "name": "Muhammed Ameen",
-       "position": "",
-       "programme": ""
-      },
-        {
-       "name": "Muhammed Jubair",
-       "position": "",
-       "programme": ""
-      },
-        {
-       "name": "Muhammed Sinan",
-       "position": "",
-       "programme": ""
-      },
-        {
-       "name": "Muhammed Navas MS",
-       "position": "",
-       "programme": ""
-        }
-    ]
+      }    ]
 }
