@@ -102,6 +102,23 @@
        "name": "BADRIYA",
        "position": "THIRD",
        "programme": "Poster Making"
+        },
+        
+        {
+       "name": "QUDSIYA",
+       "position": "FIRST",
+       "programme": " Computer Typing Malayalam"
+        },
+        
+         {
+       "name": "BADRIYA",
+       "position": "SECOND",
+       "programme": "Computer Typing Malayalam"
+         },
+        {
+       "name": "BADRIYA",
+       "position": "THIRD",
+       "programme": "Computer Typing Malayalam"
         }
     ]
 }
