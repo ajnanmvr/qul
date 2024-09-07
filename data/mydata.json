@@ -3,13 +3,18 @@
     "items": [
       {
        "name": "QUDSIYA",
-       "position": "",
-       "programme": "NN",
-       "programme": "NN"
+       "position": "FIRST",
+       "programme": "Memory Test"
       },
         {
        "name": "BADRIYA",
-       "position": "",
-       "programme": ""
-      }    ]
+       "position": "SECOND",
+       "programme": "Memory Test"
+        },
+         {
+       "name": "BADRIYA",
+       "position": "THIRD",
+       "programme": "Memory Test"
+         }
+    ]
 }
