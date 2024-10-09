@@ -5,6 +5,8 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
   const [showAllSuggestions, setShowAllSuggestions] = useState(false);
   const [likeCount, setLikeCount] = useState(0);
   const [dislikeCount, setDislikeCount] = useState(0);
+  const [hasLiked, setHasLiked] = useState(false);
+  const [hasDisliked, setHasDisliked] = useState(false);
 
   const uniqueItems = new Set();
   const filteredItems = [];
@@ -21,6 +23,8 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
 
   const handleItemClick = (item) => {
     setSelectedItem(item);
+    setHasLiked(false);  // Reset like/dislike state when a new item is selected
+    setHasDisliked(false);
   };
 
   const handleCloseModal = () => {
@@ -32,11 +36,17 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
   };
 
   const handleLike = () => {
-    setLikeCount((prevCount) => prevCount + 1);
+    if (!hasLiked && !hasDisliked) { // Only allow action if neither is done yet
+      setLikeCount((prevCount) => prevCount + 1);
+      setHasLiked(true);
+    }
   };
 
   const handleDislike = () => {
-    setDislikeCount((prevCount) => prevCount + 1);
+    if (!hasLiked && !hasDisliked) { // Only allow action if neither is done yet
+      setDislikeCount((prevCount) => prevCount + 1);
+      setHasDisliked(true);
+    }
   };
 
   return (
@@ -99,13 +109,19 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
                     <div className="ml-auto flex items-center">
                       <button
                         onClick={handleLike}
-                        className="px-4 py-2 bg-green-500 text-white font-semibold rounded-md ml-2 hover:bg-green-600"
+                        disabled={hasLiked || hasDisliked} // Disable button if either is clicked
+                        className={`px-4 py-2 text-white font-semibold rounded-md ml-2 ${
+                          hasLiked || hasDisliked ? 'bg-gray-400' : 'bg-green-500 hover:bg-green-600'
+                        }`}
                       >
                         Like
                       </button>
                       <button
                         onClick={handleDislike}
-                        className="px-4 py-2 bg-red-500 text-white font-semibold rounded-md ml-2 hover:bg-red-600"
+                        disabled={hasLiked || hasDisliked} // Disable button if either is clicked
+                        className={`px-4 py-2 text-white font-semibold rounded-md ml-2 ${
+                          hasLiked || hasDisliked ? 'bg-gray-400' : 'bg-red-500 hover:bg-red-600'
+                        }`}
                       >
                         Dislike
                       </button>
