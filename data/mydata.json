@@ -2,9 +2,14 @@
     
     "items": [
       {
-       "name": "",
-       "position": "",
-       "programme": ""
+       "name": "MEWS PAPER MAKING",
+       "position": "FIRST",
+       "programme": "QUDSIYA"
+      },
+      {
+       "name": "MEWS PAPER MAKING",
+       "position": "SECOND",
+       "programme": "BADRIYA"
       }  
 ]
 }
