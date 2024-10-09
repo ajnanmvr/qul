@@ -1,8 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function ItemList({ items, searchQuery, maxSuggestions }) {
   const [selectedItem, setSelectedItem] = useState(null);
   const [showAllSuggestions, setShowAllSuggestions] = useState(false);
+  const [starredItems, setStarredItems] = useState([]);
+
+  // Fetch starred items from localStorage on component mount
+  useEffect(() => {
+    const storedStars = localStorage.getItem('starredItems');
+    if (storedStars) {
+      setStarredItems(JSON.parse(storedStars));
+    }
+  }, []);
+
+  // Handle star icon click
+  const handleStarClick = (itemName) => {
+    if (!starredItems.includes(itemName)) {
+      const updatedStars = [...starredItems, itemName];
+      setStarredItems(updatedStars);
+      localStorage.setItem('starredItems', JSON.stringify(updatedStars));
+    }
+  };
 
   const uniqueItems = new Set();
   const filteredItems = [];
@@ -37,10 +55,46 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
       ).map((item) => (
         <li
           key={item.name}
-          className="cursor-pointer hover:bg-green-900 py-2 px-4 bg-green-800 font-semibold text-white rounded-full m-1"
+          className="cursor-pointer hover:bg-green-900 py-2 px-4 bg-green-800 font-semibold text-white rounded-full m-1 flex items-center"
           onClick={() => handleItemClick(item)}
         >
           <h2>{item.name}</h2>
+          <span
+            onClick={(e) => {
+              e.stopPropagation(); // Prevent triggering the item click
+              handleStarClick(item.name);
+            }}
+            className="ml-2 cursor-pointer"
+          >
+            {/* Star icon with conditional color based on click */}
+            {starredItems.includes(item.name) ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="gold"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path d="M12 17.27l5.18 3.73-1.64-7.03L20.1 9.27l-7.19-.61L12 2 11.09 8.66 3.9 9.27l5.55 4.7-1.64 7.03L12 17.27z" />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 17.27l5.18 3.73-1.64-7.03L20.1 9.27l-7.19-.61L12 2 11.09 8.66 3.9 9.27l5.55 4.7-1.64 7.03L12 17.27z"
+                />
+              </svg>
+            )}
+          </span>
         </li>
       ))}
       <br />
@@ -68,8 +122,10 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
                       <p className="text-gray-800 font-bold">{item.programme}</p>
                       {item.position && item.grade ? (
                         <p className="text-gray-800">
-                          <span className="font-semibold p-0.5 pl-2 pr-2 bg-slate-200 rounded-md">{item.position}</span> with{' '}
-                          <span className="font-semibold p-0.5 pl-2 pr-2 bg-slate-200 rounded-md">{item.grade}</span> grade
+                          <span className="font-semibold p-0.5 pl-2 pr-2 bg-slate-200 rounded-md">{item.position}</span>{' '}
+                          with{' '}
+                          <span className="font-semibold p-0.5 pl-2 pr-2 bg-slate-200 rounded-md">{item.grade}</span>{' '}
+                          grade
                         </p>
                       ) : (
                         <>
