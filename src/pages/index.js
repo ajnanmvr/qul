@@ -21,8 +21,8 @@ const style= "background:red"
       <div className="relative p-12 w-full sm:max-w-2xl sm:mx-auto ">
         <div className="flex justify-center">
           <img
-            src="/qul-logo.png"
-            alt="qul-logo"
+            src="/kafan-logo.png"
+            alt="kafan-logo"
             className="w-60 h-60 rounded-full mb-6"
           />
         </div>
@@ -48,7 +48,7 @@ const style= "background:red"
           <div className="glow glow-1 z-10 bg-yellow-600 absolute" />
           <div className="glow glow-2 z-20 bg-orange-600 absolute" />
           <div className="glow glow-3 z-30 bg-yellow-400 absolute" />
-          <div className="glow glow-4 z-40 bg-green-800 absolute" />
+          <div className="glow glow-4 z-40 bg-red-800 absolute" />
         </div>
         {searchQuery && (
           <ItemList items={myData.items} searchQuery={searchQuery} maxSuggestions={2} />
