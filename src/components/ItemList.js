@@ -60,8 +60,8 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
           doc.text(`${capitalizedGrade} grade without any position in ${capitalizedProgramme} in KAFAN'22`, pdfWidth / 2, 144, { align: 'center' });
         }
   
-        doc.text(`DHIU UG Arts Fest organized by Al Huda Students' Association (ASAs)`, pdfWidth / 2, 153, { align: 'center' });
-        doc.text(`on October 17 to 23, 2022 at Darul Huda Islamic University`, pdfWidth / 2, 162, { align: 'center' });
+        doc.text(`DHIU PG Arts Fest organized by Darul Huda Students' Union (DSU)`, pdfWidth / 2, 153, { align: 'center' });
+        doc.text(`on October 01 to 06, 2024 at Darul Huda Islamic University`, pdfWidth / 2, 162, { align: 'center' });
   
         const pdfBlob = doc.output('blob');
         saveAs(pdfBlob, `${item.programme} - ${item.name}.pdf`);
