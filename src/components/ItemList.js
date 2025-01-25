@@ -150,7 +150,7 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
             </div>
             <div className="flex justify-center mt-4 flex-col">
               <p className="text-zinc-500 text-sm text-center m-5">Designed and Developed by <br/>
-               <span className="font-semibold text-lg">ASAs Media Wing 2022-'23</span></p>
+               <span className="font-semibold text-lg">DSU Media Wing 2024-'25</span></p>
               <button
                 onClick={handleCloseModal}
                 className="px-4 py-2 bg-red-800 text-white font-bold rounded-md hover:bg-red-900"
