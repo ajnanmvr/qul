@@ -1,4 +1,3 @@
-
 import { saveAs } from 'file-saver';
 import { jsPDF } from 'jspdf';
 import { useState } from 'react';
@@ -53,11 +52,11 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
         doc.text(`This is to certify that Mr. ${capitalizedName} has been awarded`, pdfWidth / 2, 135, { align: 'center' });
         
         if (item.position && item.grade) {
-          doc.text(`the ${capitalizedPosition} with ${capitalizedGrade} grade in ${capitalizedProgramme} in KAFAN'22`, pdfWidth / 2, 144, { align: 'center' });
+          doc.text(`the ${capitalizedPosition} with ${capitalizedGrade} grade in ${capitalizedProgramme} in KAFAN'24`, pdfWidth / 2, 144, { align: 'center' });
         } else if (item.position) {
-          doc.text(`the ${capitalizedPosition} prize without any grade in ${capitalizedProgramme} in KAFAN'22`, pdfWidth / 2, 144, { align: 'center' });
+          doc.text(`the ${capitalizedPosition} prize without any grade in ${capitalizedProgramme} in KAFAN'24`, pdfWidth / 2, 144, { align: 'center' });
         } else if (item.grade) {
-          doc.text(`${capitalizedGrade} grade without any position in ${capitalizedProgramme} in KAFAN'22`, pdfWidth / 2, 144, { align: 'center' });
+          doc.text(`${capitalizedGrade} grade without any position in ${capitalizedProgramme} in KAFAN'24`, pdfWidth / 2, 144, { align: 'center' });
         }
   
         doc.text(`DHIU PG Arts Fest organized by Darul Huda Students' Union (DSU)`, pdfWidth / 2, 153, { align: 'center' });
