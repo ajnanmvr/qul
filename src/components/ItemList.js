@@ -52,9 +52,9 @@ export default function ItemList({ items, searchQuery, maxSuggestions }) {
         doc.text(`This is to certify that Mr. ${capitalizedName} has been awarded`, pdfWidth / 2, 135, { align: 'center' });
         
         if (item.position && item.grade) {
-          doc.text(`the ${capitalizedPosition} with ${capitalizedGrade} grade in ${capitalizedProgramme} in KAFAN'24`, pdfWidth / 2, 144, { align: 'center' });
+          doc.text(`the ${capitalizedPosition} position with ${capitalizedGrade} grade in ${capitalizedProgramme} in KAFAN'24`, pdfWidth / 2, 144, { align: 'center' });
         } else if (item.position) {
-          doc.text(`the ${capitalizedPosition} prize without any grade in ${capitalizedProgramme} in KAFAN'24`, pdfWidth / 2, 144, { align: 'center' });
+          doc.text(`the ${capitalizedPosition} position without any grade in ${capitalizedProgramme} in KAFAN'24`, pdfWidth / 2, 144, { align: 'center' });
         } else if (item.grade) {
           doc.text(`${capitalizedGrade} grade without any position in ${capitalizedProgramme} in KAFAN'24`, pdfWidth / 2, 144, { align: 'center' });
         }
